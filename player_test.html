@@ -1,0 +1,19 @@
+<!doctype html>
+<html>
+<head>
+    <title>Player Test</title>
+</head>
+<body>
+<script src='https://cdn.jsdelivr.net/npm/hls.js@latest' type='text/javascript'></script>
+<video id='hlsjs_video_tag'></video>
+<script>
+    var video = document.getElementById('hlsjs_video_tag');
+    var hls = new Hls();
+    hls.loadSource('http://45.10.42.44:8081/live/984a7c37-8c1b-48c2-ba96-6537c254246a/playlist_dvr.m3u8');
+    hls.attachMedia(video);
+    hls.on(Hls.Events.MANIFEST_PARSED,function() {
+        video.play();
+    });
+</script>
+</body>
+</html>

@@ -1,0 +1,87 @@
+{
+  "token_hmac_secret_key": "",
+  "api_key": "",
+  "allowed_origins": ["*"],
+  "client_insecure": true,
+  "allow_anonymous_connect_without_token": true,
+  "namespaces": [
+    {
+      "name": "notifications",
+      "publish": false,
+      "watch": true,
+      "anonymous": false,
+      "presence": true,
+      "join_leave": true,
+      "recover": false,
+      "history_size": 10,
+      "history_ttl": "30s"
+    },
+    {
+      "name": "chat",
+      "publish": false,
+      "watch": true,
+      "anonymous": true,
+      "presence": true,
+      "join_leave": true,
+      "recover": false,
+      "history_size": 10,
+      "history_ttl": "30s"
+    },
+    {
+      "name": "stream",
+      "publish": false,
+      "watch": true,
+      "anonymous": true,
+      "presence": true,
+      "join_leave": true,
+      "recover": false,
+      "history_size": 10,
+      "history_ttl": "30s",
+      "allow_user_limited_channels": true
+    },
+    {
+      "name": "bet",
+      "publish": false,
+      "watch": true,
+      "anonymous": true,
+      "presence": true,
+      "join_leave": true,
+      "recover": false,
+      "history_size": 10,
+      "history_ttl": "30s"
+    },
+    {
+      "name": "bet_event",
+      "publish": false,
+      "watch": true,
+      "anonymous": true,
+      "presence": true,
+      "join_leave": true,
+      "recover": false,
+      "history_size": 10,
+      "history_ttl": "30s"
+    },
+    {
+      "name": "user",
+      "publish": false,
+      "watch": true,
+      "anonymous": false,
+      "presence": true,
+      "join_leave": true,
+      "recover": false,
+      "history_size": 10,
+      "history_ttl": "30s"
+    },
+    {
+      "name": "system",
+      "publish": false,
+      "watch": true,
+      "anonymous": false,
+      "presence": true,
+      "join_leave": true,
+      "recover": false,
+      "history_size": 10,
+      "history_ttl": "30s"
+    }
+  ]
+}

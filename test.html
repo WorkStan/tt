@@ -1,0 +1,31 @@
+<!doctype html>
+<html>
+<head>
+    <title>Centrifugo quick start</title>
+</head>
+<body>
+<div id="counter">-</div>
+<script src="https://cdn.jsdelivr.net/gh/centrifugal/centrifuge-js@2.8.4/dist/centrifuge.min.js"></script>
+<script type="text/javascript">
+    const container = document.getElementById('counter')
+    const centrifuge = new Centrifuge("ws://localhost:8085/connection/websocket");
+    centrifuge.setToken("eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI0ZmYwNGM5NS03OWM2LTQxZmMtYWRkMi00OWJhNTkyMGMxMTYiLCJpbmZvIjp7Im5hbWUiOiJub25hbWUifX0.Tj21EOR3V9jhyYKIQI5_m6w9e60oEQcB9ZCjEWRkYIQ");
+
+    centrifuge.on('connect', function(ctx) {
+        console.log("connected", ctx);
+    });
+
+    centrifuge.on('disconnect', function(ctx) {
+        console.log("disconnected", ctx);
+    });
+
+    centrifuge.subscribe("notifications#4ff04c95-79c6-41fc-add2-49ba5920c116", function(ctx) {
+        container.innerHTML = ctx.data.value;
+        document.title = ctx.data.value;
+        console.log(ctx);
+    });
+
+    centrifuge.connect();
+</script>
+</body>
+</html>
