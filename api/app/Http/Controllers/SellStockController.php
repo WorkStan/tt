@@ -21,7 +21,7 @@ class SellStockController extends Controller
         $result = [];
         foreach ($response as $res)
         {
-            if (count($res['bids']) !== 0)
+            if (count($res->bids) !== 0)
             {
                 $result[] = $res;
             }
